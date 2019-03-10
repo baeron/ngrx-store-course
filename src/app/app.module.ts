@@ -7,13 +7,16 @@ import { AppComponent } from "./app.component";
 
 import { MaterialModule } from "../material/material.module";
 
+import {AuthModule} from "./auth/auth.module";
+
 @NgModule({
   declarations: [AppComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
-    MaterialModule
+    MaterialModule,
+    AuthModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
