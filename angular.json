@@ -136,5 +136,17 @@
       }
     }
   },
-  "defaultProject": "angular-ngrx-course"
+  "defaultProject": "angular-ngrx-course",
+  "schematics": {
+    "@ngrx/schematics:component": {
+      "prefix": "",
+      "styleext": "scss"
+    },
+    "@ngrx/schematics:directive": {
+      "prefix": ""
+    }
+  },
+  "cli": {
+    "defaultCollection": "@ngrx/schematics"
+  }
 }
