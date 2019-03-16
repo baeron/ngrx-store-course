@@ -9,7 +9,7 @@ import { AuthRoutingModule } from "./auth-routing.module";
 export class AuthModule {
   static forRoot(): ModuleWithProviders {
     return {
-      ngModule: AuthModule
+      ngModule: AuthModule,
     };
   }
 }
