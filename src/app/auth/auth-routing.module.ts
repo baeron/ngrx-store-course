@@ -7,7 +7,7 @@ import { AuthService } from "./services/auth.service";
 
 import {LoginComponent} from "./containers";
 
-const routes: Routes = [{ path: "home", component: LoginComponent }];
+const routes: Routes = [{ path: "login", component: LoginComponent }];
 
 @NgModule({
   imports: [ReactiveFormsModule, MaterialModule, RouterModule.forChild(routes)],
