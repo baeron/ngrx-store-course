@@ -9,35 +9,11 @@ import { environment } from "../../environments/environment";
 import { User } from "../auth/models/user.model";
 import { AuthActionTypes } from "../auth/auth.actions";
 
-// tslint:disable-next-line:interface-over-type-literal
-type AuthState = {
-  loggedIn: boolean;
-  user: User;
-};
+// tslint:disable-next-line:no-empty-interface
+export interface AppState {}
 
-const initialAuthState: AuthState = {
-  loggedIn: false,
-  user: undefined
-};
-
-export interface AppState {
-  auth: AuthState;
-}
-
-function authReducer(state: AuthState = initialAuthState, action): AuthState {
-  switch (action.type) {
-    case AuthActionTypes.LoginAction:
-      return {
-        loggedIn: true,
-        user: action.payload.user
-      };
-    default:
-      return state;
-  }
-}
 
 export const reducers: ActionReducerMap<AppState> = {
-  auth: authReducer
 };
 
 export const metaReducers: MetaReducer<AppState>[] = !environment.production
