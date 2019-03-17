@@ -6,12 +6,15 @@ import { StoreModule } from "@ngrx/store";
 import * as fromAuth from "./auth.reducer";
 import { AuthService } from "./services/auth.service";
 import { AuthGuard } from "./guard/auth.guard";
+import { EffectsModule } from "@ngrx/effects";
+import { AuthEffects } from "./auth.effects";
 
 @NgModule({
   imports: [
     CommonModule,
     AuthRoutingModule,
-    StoreModule.forFeature("auth", fromAuth.authReducer)
+    StoreModule.forFeature("auth", fromAuth.authReducer),
+    EffectsModule.forFeature([AuthEffects])
   ]
 })
 export class AuthModule {
