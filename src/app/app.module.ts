@@ -16,6 +16,7 @@ import { MaterialModule } from "../material/material.module";
 import { AuthModule } from "./auth/auth.module";
 import { reducers, metaReducers } from "./reducers";
 import { environment } from "../environments/environment";
+import { EffectsModule } from "@ngrx/effects";
 
 @NgModule({
   declarations: [AppComponent],
@@ -27,6 +28,7 @@ import { environment } from "../environments/environment";
     MaterialModule,
     AuthModule.forRoot(),
     StoreModule.forRoot(reducers, { metaReducers }),
+    EffectsModule.forRoot([]),
     !environment.production ? StoreDevtoolsModule.instrument() : []
   ],
   providers: [],
