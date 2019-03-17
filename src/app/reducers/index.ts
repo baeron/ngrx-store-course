@@ -15,11 +15,16 @@ type AuthState = {
   user: User;
 };
 
+const initialAuthState: AuthState = {
+  loggedIn: false,
+  user: undefined
+};
+
 export interface AppState {
   auth: AuthState;
 }
 
-function authReducer(state: AuthState, action): AuthState {
+function authReducer(state: AuthState = initialAuthState, action): AuthState {
   switch (action.type) {
     case AuthActionTypes.LoginAction:
       return {
