@@ -19,6 +19,11 @@ export function authReducer(state: AuthState = initialAuthState, action): AuthSt
         loggedIn: true,
         user: action.payload.user
       };
+      case AuthActionTypes.LogoutAction:
+      return {
+        loggedIn: false,
+        user: undefined
+      };
     default:
       return state;
   }

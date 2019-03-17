@@ -3,7 +3,7 @@ import { User } from './models/user.model';
 
 export enum AuthActionTypes {
   LoginAction = "[Login] Action",
-  LogautAction = "[Logout] Action"
+  LogoutAction = "[Logout] Action"
 }
 
 export class Login implements Action {
@@ -11,4 +11,8 @@ export class Login implements Action {
   constructor(public payload: {user: User}) {}
 }
 
-export type AuthActions = Login;
+export class Logout implements Action {
+  readonly type = AuthActionTypes.LogoutAction;
+}
+
+export type AuthActions = Login | Logout;
